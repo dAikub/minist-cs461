@@ -5,12 +5,7 @@ from keras.datasets import mnist
 import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras import backend as K
 import streamlit as st
-from PIL import Image, ImageDraw
-from streamlit_drawable_canvas import st_canvas
-import tensorflow as tf
 
 
 st.header("วิเคราะห์รูปภาพตัวเลขข้อมูล Minist")
