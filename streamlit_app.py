@@ -44,8 +44,8 @@ else:
 
     
 with st.sidebar:
-    st.header("เลือกรูปที่")
-    data = st.slider(data,1,50,label_visibility='hidden')
+    st.header("เลือกรูป")
+    data = st.slider("data",1,50,label_visibility='hidden')
     plt.imshow(x_train[data-1],cmap = plt.cm.binary)
     plt.axis('off')
     st.pyplot(plt.gcf())
