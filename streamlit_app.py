@@ -76,8 +76,8 @@ if 'model_trained' not in st.session_state:
 
     model = Sequential()
     model.add(Flatten(input_shape=[28,28]))
-    model.add(Dense(300, activation='relu'))
-    model.add(Dense(100, activation='relu'))
+    model.add(Dense(150, activation='relu'))
+    model.add(Dense(150, activation='relu'))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -97,7 +97,7 @@ else:
     
 with st.sidebar:
     st.header("เลือกรูป")
-    data = st.slider("เลือกรูปที่",1,50,label_visibility='hidden')
+    data = st.slider("เลือกรูปที่",1,30,label_visibility='hidden')
     plt.imshow(x_train[data-1],cmap = plt.cm.binary)
     plt.axis('off')
     st.pyplot(plt.gcf())
@@ -122,7 +122,7 @@ if 'images_displayed' not in st.session_state:
     cols = st.columns(4)
     
     # แสดงภาพทั้งหมด
-for i in range(50):
+for i in range(30):
     col_idx = i % 4
     with cols[col_idx]:
         # แสดงภาพ
