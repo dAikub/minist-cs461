@@ -97,7 +97,7 @@ else:
     
 with st.sidebar:
     st.header("เลือกรูป")
-    data = st.slider("เลือกรูปที่",1,30,label_visibility='hidden')
+    data = st.slider("เลือกรูปที่",1,100,label_visibility='hidden')
     plt.imshow(x_train[data-1],cmap = plt.cm.binary)
     plt.axis('off')
     st.pyplot(plt.gcf())
@@ -122,7 +122,7 @@ if 'images_displayed' not in st.session_state:
     cols = st.columns(4)
     
     # แสดงภาพทั้งหมด
-for i in range(30):
+for i in range(100):
     col_idx = i % 4
     with cols[col_idx]:
         # แสดงภาพ
