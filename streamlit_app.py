@@ -11,24 +11,24 @@ import streamlit as st
 st.markdown("""
     <style>
         .stButton>button {
-            background-color: #FA6969;  /* เปลี่ยนสีปุ่ม */
-            color: white;               /* เปลี่ยนสีข้อความในปุ่ม */
-            font-size: 16px;            /* ขนาดฟอนต์ */
-            padding: 10px 20px;         /* ขนาดปุ่ม */
-            border-radius: 20px;         /* มุมโค้ง */
-            width: 100%;                /* กำหนดความกว้างของปุ่ม */
-            cursor: pointer;           /* เปลี่ยนลักษณะเมาส์เป็น pointer เมื่อเอาเมาส์ไปวาง */
-            transition: all 0.3s ease;  /* เพิ่ม transition ให้การเปลี่ยนแปลง */
+            background-color: #FA6969;  
+            color: white;               
+            font-size: 16px;           
+            padding: 10px 20px;       
+            border-radius: 20px;        
+            width: 100%;                
+            cursor: pointer;           
+            transition: all 0.3s ease;  
         }
         .stButton>button:hover {
-            background-color: #C3E8A6;  /* สีเมื่อเอาเมาส์ไปวาง */
-            color: white;              /* เปลี่ยนสีฟอนต์เมื่อเอาเมาส์ไปวาง */
-            border: 2px solid #C3E8A6;  /* ขอบสีทองเมื่อเอาเมาส์ไปวาง */
+            background-color: #C3E8A6;  
+            color: white;              
+            border: 2px solid #C3E8A6;  
         }
         .stButton>button:active {
-            background-color: #FF1493;  /* สีพื้นหลังเมื่อกดปุ่ม */
-            color: white;               /* สีข้อความเมื่อกดปุ่ม */
-            border: 2px solid #8B0000;  /* ขอบสีแดงเข้มเมื่อกดปุ่ม */
+            background-color: #FF1493;  
+            color: white;               
+            border: 2px solid #8B0000;  
         }
         /* จัดตำแหน่งปุ่มตรงกลาง */
         .stButton {
@@ -60,9 +60,6 @@ fashion_dict = {
     9: "รองเท้าบูทหุ้มข้อ"
 }
 
-# ตัวอย่างการใช้งาน
-print(fashion_dict[3])  # Output: Dress
-
 
 
 (x_train, y_train),(x_test, y_test) = fashion_mnist.load_data()
@@ -76,8 +73,8 @@ if 'model_trained' not in st.session_state:
 
     model = Sequential()
     model.add(Flatten(input_shape=[28,28]))
-    model.add(Dense(150, activation='relu'))
-    model.add(Dense(150, activation='relu'))
+    model.add(Dense(128, activation='relu'))
+    model.add(Dense(128, activation='relu'))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -89,10 +86,6 @@ if 'model_trained' not in st.session_state:
 else:
     model = st.session_state.model
 
-
-    #model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    #model.fit(x_train, y_train, epochs=1)
-   # acc = model.evaluate(x_test, y_test)
 
     
 with st.sidebar:
