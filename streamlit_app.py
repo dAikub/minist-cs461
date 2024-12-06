@@ -81,7 +81,7 @@ if 'model_trained' not in st.session_state:
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model.fit(x_train, y_train, epochs=5)
+    model.fit(x_train, y_train, epochs=1)
     acc = model.evaluate(x_test, y_test)
 
     st.session_state.model_trained = True
