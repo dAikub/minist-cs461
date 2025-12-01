@@ -1,1 +1,1 @@
-minist-cs461-bu.streamlit.app
+https://minist-cs461-bu.streamlit.app/
